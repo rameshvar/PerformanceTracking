@@ -29,7 +29,7 @@ dependencies {
 }
 //adeum { // this section added for AppDynamics
 //    account {
-//        name 'SapientConsultingIndia-a0Q80000009FZHhEAO'
-//        licenseKey 'a55ca17f-fb10-4328-9970-60caf2c1e55f'
+//        name 'Abc'
+//        licenseKey 'Def'
 //    }
 //}

@@ -17,8 +17,8 @@ import com.performance.tracking.PerformanceTracker;
 import com.performance.tracking.R;
 
 public class MainActivity extends AppCompatActivity {
-    private static final String APP_DYNAMICS_KEY = "AD-AAB-AAK-HTJ";
-    private static final String NEW_RELIC_KEY = "AA03ca93fc314aa73d1a73ce3069ba5bda9bf2c228";
+    private static final String APP_DYNAMICS_KEY = "1234";
+    private static final String NEW_RELIC_KEY = "4567";
 
     public static void showPermissionDialog(
             @NonNull Activity activity, @NonNull String permission, final int requestCode) {
