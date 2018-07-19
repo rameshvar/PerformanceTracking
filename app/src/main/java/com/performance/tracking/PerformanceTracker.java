@@ -31,7 +31,7 @@ import static com.performance.tracking.Constants.Monitoring.STOP_MONITORING;
  */
 public class PerformanceTracker {
     private static PerformanceTracker mPerformanceTracker;
-    private static AnalyticsHandler mHandler = null;
+    private AnalyticsHandler mHandler = null;
     private Context mContext;
     private IAnalytics mPAnalyticsImpl;
     private HashMap<String, PerformanceEvent> mTaskMap = new HashMap<>();
@@ -53,7 +53,7 @@ public class PerformanceTracker {
     /**
      * initialize PerformanceTracker
      *
-     * @param context
+     * @param context Application context
      */
     public void initialize(Context context) {
         mContext = context;
@@ -296,9 +296,21 @@ public class PerformanceTracker {
                 .equals(mAnalyticsVendor);
     }
 
-    boolean isDiskWrite() {
+    private boolean isDiskWrite() {
         return mAnalyticsVendor != null && Constants.AnalyticsVendor.APP_DYNAMICS
                 .equals(mAnalyticsVendor);
+    }
+
+    /**
+     * add custom event
+     *
+     * @param eventName  event name
+     * @param attributes event attributess
+     */
+    public void addCustomEvent(String eventName, Map<String, Object> attributes) {
+        if (mPAnalyticsImpl != null) {
+            mPAnalyticsImpl.addCustomEvent(eventName, attributes);
+        }
     }
 
 }
